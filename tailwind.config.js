@@ -6,14 +6,24 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#111111',
-        accent: '#F9B200', 
+        accent: {
+          DEFAULT: '#D32F2F', 
+          foreground: '#ffffff'
+        }
       },
       fontFamily: {
-        sans: ['var(--font-roboto)', 'Helvetica', 'Arial', 'sans-serif'],
-        condensed: ['var(--font-roboto-condensed)', 'sans-serif'],
+        sans: [
+          'var(--font-roboto)',
+          'Helvetica',
+          'Arial',
+          'sans-serif'
+        ],
+        condensed: [
+          'var(--font-roboto-condensed)',
+          'sans-serif'
+        ]
       },
-    },
+    }
   },
   plugins: [],
 };
