@@ -119,39 +119,38 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
                     />
                  )}
               </div>
-              <div className="mb-2 text-center md:text-left">
+              <div className="mb-2 md:text-left">
                    {category && (
-                       <div className="flex justify-center md:justify-start">
-                           <span className="text-[11px] font-bold text-gray-400 uppercase tracking-[0.2em] mb-3 block">
-                               {category}
-                           </span>
-                       </div>
+                       <span className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em] mb-2 block">
+                           {category}
+                       </span>
                    )}
-                   <h2 className="text-3xl md:text-[32px] font-condensed font-bold leading-tight mb-4 group-hover:text-red-700 transition-colors text-black">
+                   <h2 className="text-3xl font-condensed font-bold leading-tight mb-3 group-hover:text-red-700 transition-colors text-gray-900">
                        {title}
                    </h2>
-                   <div className="text-[11px] text-gray-500 flex items-center justify-center md:justify-start gap-2 uppercase font-semibold mb-5 tracking-wide">
-                        {author && <span className="text-black font-black">by {author}</span>}
+                   <div className="text-[11px] text-gray-500 flex items-center gap-1 mb-4 italic font-serif">
+                        <span className="not-italic text-gray-400">by</span>
+                        {author && <span className="text-black font-bold uppercase not-italic">{author}</span>}
                         {date && (
                             <>
-                             <span className="text-gray-300">-</span>
+                             <span className="mx-1 text-gray-300 not-italic">-</span>
                              <span>{date}</span>
                             </>
                         )}
                         {commentCount !== undefined && (
                             <>
-                                <span className="text-gray-300">-</span>
+                                <span className="mx-1 text-gray-300 not-italic">-</span>
                                 <span>{commentCount}</span>
                             </>
                         )}
                    </div>
                    {excerpt && (
-                       <p className="text-gray-600 text-[15px] leading-7 font-sans">
+                       <p className="text-gray-600 text-[15px] leading-7 font-sans mb-6">
                            {excerpt}
                        </p>
                    )}
-                   <div className="mt-6 flex justify-center md:justify-start">
-                       <button className="border border-gray-300 text-[11px] font-bold px-6 py-2.5 uppercase tracking-widest hover:bg-black hover:text-white hover:border-black transition-all duration-300">
+                   <div>
+                       <button className="border border-gray-300 text-[10px] font-bold px-5 py-2 uppercase tracking-widest hover:bg-black hover:text-white hover:border-black transition-all duration-300">
                            Read More
                        </button>
                    </div>
@@ -162,24 +161,23 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
 
   if (variant === 'hero-sub') {
     return (
-        <div className={`flex gap-3 items-center bg-transparent h-full group cursor-pointer ${className}`}>
-             <div className="relative w-[70px] h-[70px] flex-shrink-0 overflow-hidden bg-gray-100">
+        <div className={`flex gap-2.5 items-start bg-transparent h-full group cursor-pointer ${className}`}>
+             <div className="relative w-[60px] h-[60px] flex-shrink-0 overflow-hidden bg-gray-100">
                 {imageSrc && (
                     <Image
                         src={imageSrc}
                         alt={title}
                         fill
-                        sizes="70px"
+                        sizes="60px"
                         className="object-cover transition-transform duration-300 group-hover:scale-110"
                     />
                 )}
              </div>
              <div className="flex-1 min-w-0">
-                 <h3 className="text-[13px] font-bold leading-5 group-hover:text-red-700 transition-colors line-clamp-3 font-condensed text-gray-900">
+                 <h3 className="text-[12px] font-bold leading-[1.3] group-hover:text-red-700 transition-colors line-clamp-3 font-condensed text-gray-900 mt-[-2px]">
                      {title}
                  </h3>
              </div>
-             
         </div>
     )
   }

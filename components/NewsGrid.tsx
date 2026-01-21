@@ -11,7 +11,8 @@ const NewsGrid = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-12 max-w-[1200px]">
+    <div className="bg-[#f4f5f5] py-12">
+      <div className="container mx-auto px-4 max-w-[1200px]">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         
         {/* Left Sidebar - The Latest */}
@@ -130,6 +131,7 @@ const NewsGrid = () => {
              </section>
         </div>
 
+      </div>
       </div>
     </div>
   );

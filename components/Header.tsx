@@ -28,7 +28,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="mb-8 bg-white z-[40] font-condensed">
+      <header className="bg-white z-[40] font-condensed">
         {/* Top Row: Logo */}
         <div className="container mx-auto px-4 py-8 text-center">
           <div className="flex justify-center">
@@ -61,7 +61,7 @@ const Header = () => {
 
               {/* Center: Navigation Links */}
               <nav className="hidden md:block h-full">
-                <ul className="flex justify-center gap-6 text-black h-full items-center font-bold uppercase text-sm tracking-wide">
+                <ul className="flex justify-center gap-6 text-black h-full items-center font-bold uppercase text-base tracking-wide">
                   {navItems.map((item) => (
                     <li 
                       key={item.name} 
