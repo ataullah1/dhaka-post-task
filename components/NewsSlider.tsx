@@ -8,7 +8,7 @@ import Link from 'next/link';
 interface Article {
   id: string | number;
   title: string;
-  imageSrc: string;
+  imageSrc?: string;
 }
 
 interface NewsSliderProps {
