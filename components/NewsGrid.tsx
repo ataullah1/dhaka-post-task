@@ -13,7 +13,7 @@ const NewsGrid = () => {
   ];
 
   return (
-    <div className="bg-[#f4f5f5] py-12">
+    <div className="bg-[#f4f5f5] py-7">
       <div className="container mx-auto px-4 max-w-[1260px]">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-7 items-start">
         
@@ -95,7 +95,7 @@ const NewsGrid = () => {
               imageSrc="/images/demo-34-750x375.jpg"
            />
            
-           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-7 gap-y-7 mt-12 pt-7 border-t border-gray-200">
+           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-7 gap-y-7 pt-7">
                 <ArticleCard 
                   variant="sidebar-right" 
                   category="Business"
@@ -115,48 +115,58 @@ const NewsGrid = () => {
         </div>
 
         {/* Right Sidebar */}
-        <div className="lg:col-span-3 space-y-10">
+        <div className="lg:col-span-3 space-y-7">
              <div className="relative w-full aspect-[300/250] mb-7 flex items-center justify-center">
                 <img src="/images/banner-ad-345x345.jpg" alt="Ad" className="max-w-full h-auto object-contain" />
              </div>
 
-             <section>
-                 <span className="bg-[#F9B200] text-white text-[10px] font-bold px-1 py-0.5 uppercase mb-3 inline-block">Opinion</span>
-                 <div className="relative w-full aspect-[3/2] mb-4 overflow-hidden bg-gray-100 group">
+             <div className="bg-white border border-gray-100 shadow-sm group cursor-pointer">
+                 <div className="relative w-full aspect-[3/2] overflow-hidden bg-gray-100">
+                    <span className="absolute top-4 left-0 z-10 bg-[#F9B200] text-white text-[10px] font-bold px-2 py-1 uppercase tracking-wider">
+                        Opinion
+                    </span>
                     <img src="/images/demo-24-350x250.jpg" alt="Opinion Cover" className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500" />
                  </div>
-                 <div className="mb-2 md:text-left">
-                    <h2 className="text-3xl font-condensed font-bold leading-tight mb-3 group-hover:text-red-700 transition-colors text-gray-900">
-                        Tour showcases shared art history of Indonesia and Singapore
+                 <div className="p-6">
+                    <h2 className="text-[20px] font-condensed font-bold leading-tight mb-3 group-hover:text-red-700 transition-colors text-gray-900">
+                        Democratic Party politician calls Prabowo ‘cardboard general’
                     </h2>
-                    <div className="text-[11px] text-gray-500 flex items-center gap-1 mb-4 italic font-sans">
-                        <span className="not-italic text-gray-400">by</span>
-                        <span className="text-black font-bold uppercase not-italic">John Doe</span>
-                        <span className="ml-1">and 1 others</span>
-                    </div>
-                    <div className="text-[12px] text-gray-400 flex items-center gap-4 mb-5 font-sans italic">
-                        <div>
-                           <span className="not-italic mr-1">by</span>
-                           <span className="text-black font-bold uppercase not-italic">John Doe</span>
-                           <span className="ml-1">and 1 others</span>
-                        </div>
-                        <div className="flex items-center gap-1.5">
-                            <Clock className="w-3.5 h-3.5" />
-                            <span className="not-italic">February 17, 2020</span>
-                        </div>
-                        <div className="flex items-center gap-1.5">
-                            <span className="text-[10px]">💬</span> 
-                            <span className="not-italic">12</span>
+                    <div className="text-[11px] text-gray-400 flex items-center gap-2 mb-4 font-sans font-semibold">
+                        <span className="text-black uppercase">by JOHN DOE</span>
+                        <div className="flex items-center gap-1">
+                            <Clock className="w-3 h-3" />
+                            <span>August 10, 2018</span>
                         </div>
                     </div>
-                    <p className="text-gray-600 text-[15px] leading-7 font-sans mb-6 line-clamp-2">
-                        When we get out of the glass bottle of our ego and when we escape like the squirrels in the cage of our personality and get into the forest again, we shall shiver with cold and fright.
+                    <p className="text-gray-500 text-[13px] leading-relaxed font-sans line-clamp-3">
+                        Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life...
                     </p>
-                    <button className="border border-gray-300 text-[10px] font-bold px-5 py-2 uppercase tracking-widest hover:bg-black hover:text-white hover:border-black transition-all duration-300">
-                        Read More
-                    </button>
                 </div>
-             </section>
+             </div>
+
+             <div className="bg-white border border-gray-100 shadow-sm group cursor-pointer">
+                 <div className="relative w-full aspect-[3/2] overflow-hidden bg-gray-100">
+                    <span className="absolute top-4 left-0 z-10 bg-[#ff005a] text-white text-[10px] font-bold px-2 py-1 uppercase tracking-wider">
+                        Lifestyle
+                    </span>
+                    <img src="/images/demo-49-350x250.jpg" alt="Lifestyle Cover" className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500" />
+                 </div>
+                 <div className="p-6">
+                    <h2 className="text-[20px] font-condensed font-bold leading-tight mb-3 group-hover:text-red-700 transition-colors text-gray-900">
+                        Google tracks location data even when users turn service off
+                    </h2>
+                    <div className="text-[11px] text-gray-400 flex items-center gap-2 mb-4 font-sans font-semibold">
+                        <span className="text-black uppercase">by JOHN DOE</span>
+                        <div className="flex items-center gap-1">
+                            <Clock className="w-3 h-3" />
+                            <span>August 14, 2018</span>
+                        </div>
+                    </div>
+                    <p className="text-gray-500 text-[13px] leading-relaxed font-sans line-clamp-3">
+                        Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life...
+                    </p>
+                </div>
+             </div>
         </div>
 
       </div>
