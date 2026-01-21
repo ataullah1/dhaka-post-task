@@ -77,7 +77,41 @@ export const rightSidebarArticles: Article[] = [
       title: "Google tracks location data even when users turn service off",
       author: "John Doe",
       date: "August 14, 2018",
-      excerpt: "Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life...",
       imageSrc: "/images/demo-49-350x250.jpg"
   }
 ];
+
+export const siteConfig = {
+  name: "The Downtown",
+  logo: "/logo.png",
+  copyright: "The Downtown. All rights reserved."
+};
+
+export const navItems = [
+  { name: 'Home', path: '/' },
+  { name: 'News', path: '/news' },
+  { name: 'Politics', path: '/politics' },
+  { name: 'Business', path: '/business' },
+  { name: 'National', path: '/national' },
+  { name: 'Culture', path: '/culture' },
+  { name: 'Opinion', path: '/opinion' },
+  { name: 'Lifestyle', path: '/lifestyle' },
+  { name: 'Sports', path: '/sports' },
+];
+
+export const socialLinks = {
+  facebook: "#",
+  twitter: "#",
+  youtube: "#",
+  rss: "#"
+};
+
+export const adConfig = {
+  sidebarBanner: {
+    src: "/images/banner-ad-345x345.jpg",
+    alt: "Advertisement",
+    width: 300,
+    height: 250
+  }
+};
+

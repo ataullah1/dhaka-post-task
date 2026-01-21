@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, Search, ChevronDown, Facebook, Youtube, Rss } from 'lucide-react';
+import { navItems, siteConfig, socialLinks } from '../data/mockData';
 
 const Header = () => {
   const pathname = usePathname();
@@ -29,14 +30,14 @@ const Header = () => {
   return (
     <>
       <header className="bg-white z-[40] font-condensed">
-        {/* Top Row: Logo */}
+        {/* BRANDING AREA: Logo centered */}
         <div className="container mx-auto px-4 py-8 text-center">
           <div className="flex justify-center">
             <Link href="/">
                <div className="relative w-48 h-8">
                   <Image 
-                    src="/logo.png" 
-                    alt="The Downtown" 
+                    src={siteConfig.logo} 
+                    alt={siteConfig.name} 
                     fill
                     className="object-contain"
                     priority
@@ -46,12 +47,12 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Bottom Row: Navigation */}
+        {/* NAVIGATION BAR: Main menu and search */}
         <div className="border-t border-gray-900">
           <div className="container mx-auto px-4">
             <div className="flex items-center justify-between h-12">
               
-              {/* Left: Hamburger Menu */}
+              {/* ACTION: Mobile Menu Toggle */}
               <button 
                 className="p-2 -ml-2 hover:bg-gray-100 rounded-full transition-colors"
                 onClick={() => setIsSidebarOpen(true)}
@@ -59,7 +60,7 @@ const Header = () => {
                 <Menu className="w-6 h-6 text-black" />
               </button>
 
-              {/* Center: Navigation Links */}
+              {/* NAVIGATION: Desktop Menu */}
               <nav className="hidden md:block h-full">
                 <ul className="flex justify-center gap-6 text-black h-full items-center font-bold uppercase text-base tracking-wide">
                   {navItems.map((item) => (
@@ -163,19 +164,19 @@ const Header = () => {
            {/* Social Icons */}
            <div className="mt-8 pt-8 border-t border-gray-100">
               <div className="flex gap-4">
-                 <Link href="#" className="text-gray-600 hover:text-[#3b5998] transition-colors">
+                 <Link href={socialLinks.facebook} className="text-gray-600 hover:text-[#3b5998] transition-colors">
                     <Facebook className="w-5 h-5" />
                  </Link>
-                 <Link href="#" className="text-gray-600 hover:text-black transition-colors">
+                 <Link href={socialLinks.twitter} className="text-gray-600 hover:text-black transition-colors">
                     {/* X Logo (Twitter) */}
                     <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
                         <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                     </svg>
                  </Link>
-                 <Link href="#" className="text-gray-600 hover:text-[#FF0000] transition-colors">
+                 <Link href={socialLinks.youtube} className="text-gray-600 hover:text-[#FF0000] transition-colors">
                     <Youtube className="w-5 h-5" />
                  </Link>
-                 <Link href="#" className="text-gray-600 hover:text-[#ee802f] transition-colors">
+                 <Link href={socialLinks.rss} className="text-gray-600 hover:text-[#ee802f] transition-colors">
                     <Rss className="w-5 h-5" />
                  </Link>
               </div>
