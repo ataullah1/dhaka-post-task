@@ -30,7 +30,7 @@ const Header = () => {
   return (
     <>
       <header className="bg-white z-[40] font-condensed">
-        {/* BRANDING AREA: Logo centered */}
+        {/* Logo */}
         <div className="container mx-auto px-4 py-8 text-center">
           <div className="flex justify-center">
             <Link href="/">
@@ -47,12 +47,12 @@ const Header = () => {
           </div>
         </div>
 
-        {/* NAVIGATION BAR: Main menu and search */}
+        {/* Navigation */}
         <div className="border-t border-gray-900">
           <div className="container mx-auto px-4">
             <div className="flex items-center justify-between h-12">
               
-              {/* ACTION: Mobile Menu Toggle */}
+              {/* Mobile Menu Button */}
               <button 
                 className="p-2 -ml-2 hover:bg-gray-100 rounded-full transition-colors"
                 onClick={() => setIsSidebarOpen(true)}
@@ -60,7 +60,7 @@ const Header = () => {
                 <Menu className="w-6 h-6 text-black" />
               </button>
 
-              {/* NAVIGATION: Desktop Menu */}
+              {/* Desktop Menu */}
               <nav className="hidden md:block h-full">
                 <ul className="flex justify-center gap-6 text-black h-full items-center font-bold uppercase text-base tracking-wide">
                   {navItems.map((item) => (

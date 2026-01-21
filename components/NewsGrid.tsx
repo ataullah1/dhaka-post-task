@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import SectionHeader from './SectionHeader';
 import ArticleCard from './ArticleCard';
 import NewsSlider from './NewsSlider';
@@ -15,21 +16,14 @@ import {
 
 const NewsGrid = () => {
 
-
   return (
     <div className="bg-[#f4f5f5] py-7">
       <div className="container mx-auto px-4 max-w-[1260px]">
-        {/* PRIMARY LAYOUT: 12-Column Grid
-            - Left Sidebar: 3 cols
-            - Main Content: 6 cols
-            - Right Sidebar: 3 cols
-        */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-7 items-start">
         
-        {/* LEFT SIDEBAR AREA */}
+        {/* Left Sidebar */}
         <div className="lg:col-span-3 flex flex-col gap-7">
             
-            {/* COMPONENT: Latest News List */}
             <div className="bg-white p-5 border border-gray-100 shadow-sm">
               <SectionHeader title="The Latest" />
               <div className="flex flex-col gap-6">
@@ -44,7 +38,6 @@ const NewsGrid = () => {
               </div>
             </div>
 
-            {/* COMPONENT: Opinion List */}
              <div className="bg-white p-5 border border-gray-100 shadow-sm">
                  <SectionHeader title="Opinion" />
                  <div className="mt-4">
@@ -59,13 +52,11 @@ const NewsGrid = () => {
              </div>
         </div>
 
-        {/* MAIN CONTENT AREA */}
+        {/* Main Content */}
         <div className="lg:col-span-6">
            
-           {/* FEATURE: Main Slider */}
            <NewsSlider articles={sliderArticles} />
 
-           {/* FEATURE: Hero Article */}
            <ArticleCard 
               variant="hero"
               category={heroArticle.category}
@@ -77,7 +68,6 @@ const NewsGrid = () => {
               imageSrc={heroArticle.imageSrc}
            />
            
-           {/* SUB-FEATURE: Two-column article grid below Hero */}
            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-7 gap-y-7 pt-7">
                 {subHeroArticles.map((article) => (
                   <ArticleCard 
@@ -93,10 +83,16 @@ const NewsGrid = () => {
 
         </div>
 
-        {/* RIGHT SIDEBAR AREA */}
+        {/* Right Sidebar */}
         <div className="lg:col-span-3 space-y-7">
              <div className="relative w-full aspect-[300/250] mb-7 flex items-center justify-center">
-                <img src="/images/banner-ad-345x345.jpg" alt="Ad" className="max-w-full h-auto object-contain" />
+                <Image 
+                  src="/images/banner-ad-345x345.jpg" 
+                  alt="Ad" 
+                  fill
+                  className="object-contain" 
+                  sizes="(max-width: 768px) 100vw, 300px"
+                />
              </div>
 
              {rightSidebarArticles.map((article) => (
@@ -107,7 +103,15 @@ const NewsGrid = () => {
                     }`}>
                         {article.category}
                     </span>
-                    <img src={article.imageSrc} alt={`${article.category} Cover`} className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500" />
+                    {article.imageSrc && (
+                      <Image 
+                        src={article.imageSrc} 
+                        alt={`${article.category} Cover`} 
+                        fill
+                        className="object-cover group-hover:scale-110 transition-transform duration-500" 
+                        sizes="(max-width: 768px) 100vw, 350px"
+                      />
+                    )}
                  </div>
                  <div className="p-6">
                     <h2 className="text-[20px] font-condensed font-bold leading-tight mb-3 group-hover:text-red-700 transition-colors text-gray-900">
