@@ -13,11 +13,11 @@ const NewsGrid = () => {
 
   return (
     <div className="bg-[#f4f5f5] py-12">
-      <div className="container mx-auto px-4 max-w-[1200px]">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      <div className="container mx-auto px-4 max-w-[1240px]">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-start">
         
         {/* Left Sidebar - The Latest */}
-        <div className="lg:col-span-3 flex flex-col">
+        <div className="lg:col-span-3 flex flex-col bg-white p-5 border border-gray-100 shadow-sm">
           <SectionHeader title="The Latest" />
           <div className="space-y-1">
              <ArticleCard 
@@ -49,7 +49,7 @@ const NewsGrid = () => {
         </div>
 
         {/* Center Content */}
-        <div className="lg:col-span-6 border-r border-gray-100 lg:pr-8 lg:pl-4">
+        <div className="lg:col-span-6 border-r border-gray-200 lg:pr-8 lg:pl-4">
            
            <NewsSlider articles={sliderArticles} />
 
@@ -64,7 +64,7 @@ const NewsGrid = () => {
               imageSrc="/images/demo-34-750x375.jpg"
            />
            
-           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8 mt-12 pt-8 border-t border-gray-100">
+           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8 mt-12 pt-8 border-t border-gray-200">
                 <ArticleCard 
                   variant="sidebar-right" 
                   title="Democratic Party politician calls Prabowo 'cardboard general'"
@@ -87,7 +87,7 @@ const NewsGrid = () => {
         </div>
 
         {/* Right Sidebar */}
-        <div className="lg:col-span-3 space-y-10 pl-2">
+        <div className="lg:col-span-3 space-y-10">
              <div className="relative w-full aspect-[300/250] mb-8 flex items-center justify-center">
                 <img src="/images/banner-ad-345x345.jpg" alt="Ad" className="max-w-full h-auto object-contain" />
              </div>
@@ -95,7 +95,7 @@ const NewsGrid = () => {
              <section>
                  <span className="bg-[#F9B200] text-white text-[10px] font-bold px-1 py-0.5 uppercase mb-3 inline-block">Opinion</span>
                  <div className="relative w-full aspect-[3/2] mb-4 overflow-hidden bg-gray-100 group">
-                    <img src="/images/demo-49-350x250.jpg" alt="Opinion Cover" className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500" />
+                    <img src="/images/demo-12-350x250.jpg" alt="Opinion Cover" className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500" />
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
                     <div className="absolute bottom-4 left-4 right-4">
                          <h3 className="text-white text-xl font-condensed font-bold leading-snug">

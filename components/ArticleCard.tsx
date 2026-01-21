@@ -161,20 +161,20 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
 
   if (variant === 'hero-sub') {
     return (
-        <div className={`flex gap-2.5 items-start bg-transparent h-full group cursor-pointer ${className}`}>
-             <div className="relative w-[60px] h-[60px] flex-shrink-0 overflow-hidden bg-gray-100">
+        <div className={`flex gap-3 items-start bg-transparent h-full group cursor-pointer ${className}`}>
+             <div className="relative w-[70px] h-[70px] flex-shrink-0 overflow-hidden bg-gray-100">
                 {imageSrc && (
                     <Image
                         src={imageSrc}
                         alt={title}
                         fill
-                        sizes="60px"
+                        sizes="70px"
                         className="object-cover transition-transform duration-300 group-hover:scale-110"
                     />
                 )}
              </div>
              <div className="flex-1 min-w-0">
-                 <h3 className="text-[12px] font-bold leading-[1.3] group-hover:text-red-700 transition-colors line-clamp-3 font-condensed text-gray-900 mt-[-2px]">
+                 <h3 className="text-[11px] font-bold leading-[1.35] group-hover:text-red-700 transition-colors line-clamp-5 font-condensed text-gray-900 mt-[-2px]">
                      {title}
                  </h3>
              </div>
