@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google"; 
+import { Roboto_Condensed, Roboto } from "next/font/google"; 
 import "./globals.css";
 
-
-const inter = Inter({
-  variable: "--font-inter",
+const robotoCondensed = Roboto_Condensed({
+  variable: "--font-roboto-condensed",
   subsets: ["latin"],
   display: "swap",
+  weight: ["300", "400", "700"], 
 });
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const roboto = Roboto({
+  variable: "--font-roboto",
   subsets: ["latin"],
   display: "swap",
+  weight: ["400", "500", "700"],
 });
 
 export const metadata: Metadata = {
@@ -31,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${playfair.variable} antialiased font-sans text-gray-900 bg-white`}
+        className={`${robotoCondensed.variable} ${roboto.variable} antialiased font-sans text-gray-900 bg-white`}
       >
         <div className="min-h-screen flex flex-col">
            <Header />

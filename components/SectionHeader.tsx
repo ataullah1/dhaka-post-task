@@ -7,7 +7,7 @@ interface SectionHeaderProps {
 const SectionHeader: React.FC<SectionHeaderProps> = ({ title }) => {
   return (
     <div className="mb-6">
-      <h2 className="text-xl font-bold border-b-2 border-black pb-2 inline-block">
+      <h2 className="text-xl font-bold border-b-2 border-black pb-2 inline-block font-condensed">
         {title}
       </h2>
       <div className="border-b border-gray-200 -mt-[1px] w-full"></div>

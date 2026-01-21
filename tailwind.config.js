@@ -10,8 +10,8 @@ module.exports = {
         accent: '#F9B200', 
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'sans-serif'],
-        serif: ['var(--font-playfair)', 'serif'],
+        sans: ['var(--font-roboto)', 'Helvetica', 'Arial', 'sans-serif'],
+        condensed: ['var(--font-roboto-condensed)', 'sans-serif'],
       },
     },
   },
