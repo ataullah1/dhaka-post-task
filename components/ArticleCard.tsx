@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { Clock } from 'lucide-react';
 
 type CardVariant = 'sidebar-left' | 'sidebar-right' | 'hero' | 'hero-sub' | 'opinion';
 
@@ -42,7 +43,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
            )}
         </div>
         <div>
-          <h3 className="text-[13px] font-bold leading-5 group-hover:text-red-700 transition-colors font-condensed text-gray-900">
+          <h3 className="text-[15px] font-bold leading-5 group-hover:text-red-700 transition-colors font-condensed text-gray-900">
             {title}
           </h3>
         </div>
@@ -55,7 +56,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
        <div className={`group cursor-pointer bg-white border border-gray-100 shadow-sm h-full ${className}`}>
          <div className="relative w-full aspect-[3/2] overflow-hidden bg-gray-100">
              {category && (
-                 <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 z-10 text-white text-[10px] font-bold px-2 py-1 uppercase tracking-wider ${
+                 <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 z-10 text-white text-[11px] font-bold px-3 py-1 uppercase tracking-wider ${
                      category.toLowerCase() === 'politics' ? 'bg-[#ff005a]' : 
                      category.toLowerCase() === 'business' ? 'bg-[#0078FF]' : 'bg-[#F9B200]'
                  }`}>
@@ -72,12 +73,12 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
              />
            )}
          </div>
-         <div className="p-5 text-center">
-             <h3 className="text-[17px] font-bold leading-snug mb-3 group-hover:text-red-700 transition-colors font-condensed text-gray-900">
+         <div className="p-6 text-center">
+             <h3 className="text-[20px] font-bold leading-tight mb-3 group-hover:text-red-700 transition-colors font-condensed text-gray-900">
                  {title}
              </h3>
-             <div className="text-[11px] text-gray-400 flex items-center justify-center gap-2 mb-3">
-                 <span className="relative top-[1px]">🕒</span>
+             <div className="text-[12px] text-gray-400 flex items-center justify-center gap-1.5 mb-1 font-sans">
+                 <Clock className="w-3.5 h-3.5" />
                  <span>{date}</span>
              </div>
          </div>
