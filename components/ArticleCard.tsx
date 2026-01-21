@@ -101,8 +101,8 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
 
   if (variant === 'hero') {
       return (
-          <div className={`relative mb-8 group cursor-pointer ${className}`}>
-              <div className="relative w-full aspect-[16/9] mb-6 overflow-hidden bg-gray-100">
+          <div className={`group cursor-pointer bg-white border border-gray-200 shadow-sm ${className}`}>
+              <div className="relative w-full aspect-[16/9] overflow-hidden bg-gray-100">
                  {imageSrc && (
                     <Image 
                         src={imageSrc} 
@@ -113,38 +113,42 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
                     />
                  )}
               </div>
-              <div className="mb-2 md:text-left">
+              <div className="relative -mt-20 mx-3 md:mx-5 bg-white p-7 z-10 text-center md:text-left transition-transform duration-300 hover:-translate-y-1">
                    {category && (
-                       <span className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em] mb-2 block">
+                       <span className="text-[11px] font-bold text-gray-400 uppercase tracking-[0.15em] mb-2 block">
                            {category}
                        </span>
                    )}
-                   <h2 className="text-3xl font-condensed font-bold leading-tight mb-3 group-hover:text-red-700 transition-colors text-gray-900">
+                   <h2 className="text-3xl font-condensed font-bold leading-[1.1] mb-3 group-hover:text-red-700 transition-colors text-gray-900">
                        {title}
                    </h2>
-                   <div className="text-[11px] text-gray-500 flex items-center gap-1 mb-4 italic font-serif">
-                        <span className="not-italic text-gray-400">by</span>
-                        {author && <span className="text-black font-bold uppercase not-italic">{author}</span>}
+                   <div className="text-[13px] text-gray-500 flex items-center gap-5 mb-3 font-sans italic">
+                        <div>
+                           <span className="mr-1 text-gray-400">by</span>
+                           {author && <span className="text-black font-bold uppercase not-italic">{author}</span>}
+                           <span className="ml-1 text-gray-400">and 1 others</span>
+                        </div>
+                        
                         {date && (
-                            <>
-                             <span className="mx-1 text-gray-300 not-italic">-</span>
-                             <span>{date}</span>
-                            </>
+                             <div className="flex items-center gap-2 text-gray-400 not-italic">
+                                 <Clock className="w-3.5 h-3.5" />
+                                 <span>{date}</span>
+                             </div>
                         )}
                         {commentCount !== undefined && (
-                            <>
-                                <span className="mx-1 text-gray-300 not-italic">-</span>
-                                <span>{commentCount}</span>
-                            </>
+                             <div className="flex items-center gap-2 text-gray-400 not-italic">
+                                 <span className="text-[10px]">💬</span> 
+                                 <span>{commentCount}</span>
+                             </div>
                         )}
                    </div>
                    {excerpt && (
-                       <p className="text-gray-600 text-[15px] leading-7 font-sans mb-6">
+                       <p className="text-gray-500 text-[17px] leading-8 font-serif mb-6 line-clamp-2">
                            {excerpt}
                        </p>
                    )}
                    <div>
-                       <button className="border border-gray-300 text-[10px] font-bold px-5 py-2 uppercase tracking-widest hover:bg-black hover:text-white hover:border-black transition-all duration-300">
+                       <button className="border border-gray-300 text-[11px] font-bold px-8 py-3 uppercase tracking-widest hover:bg-black hover:text-white hover:border-black transition-all duration-300">
                            Read More
                        </button>
                    </div>
