@@ -1,7 +1,9 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import ArticleCard from './ArticleCard';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import Link from 'next/link';
 
 interface Article {
   id: string | number;
@@ -15,60 +17,84 @@ interface NewsSliderProps {
 
 const NewsSlider: React.FC<NewsSliderProps> = ({ articles }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
 
-  // We want to show 2 items at a time on desktop
-  const itemsPerPage = 2;
+  // Configuration
+  const itemsPerPage = 3;
+  const autoPlayInterval = 5000;
   
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setCurrentIndex((prev) => 
-      prev + 1 >= articles.length - (itemsPerPage - 1) ? 0 : prev + 1
+      prev + 1 > articles.length - itemsPerPage ? 0 : prev + 1
     );
-  };
+  }, [articles.length, itemsPerPage]);
 
   const prevSlide = () => {
     setCurrentIndex((prev) => 
-      prev === 0 ? articles.length - itemsPerPage : prev - 1
+      prev === 0 ? Math.max(0, articles.length - itemsPerPage) : prev - 1
     );
   };
 
-  return (
-    <div className="relative group mb-8 bg-white border border-gray-100 p-1">
-      <div className="overflow-hidden">
-        <div 
-          className="flex transition-transform duration-500 ease-in-out"
-          style={{ transform: `translateX(-${currentIndex * (100 / itemsPerPage)}%)` }}
-        >
-          {articles.map((article) => (
-            <div 
-              key={article.id} 
-              className="w-1/2 flex-shrink-0 px-2" // 2 items per page = 50% width
-            >
-               <ArticleCard 
-                  variant="hero-sub"
-                  title={article.title}
-                  imageSrc={article.imageSrc}
-                  className="h-full border-0 shadow-none hover:shadow-none bg-transparent"
-               />
-            </div>
-          ))}
-        </div>
-      </div>
+  // Auto-play
+  useEffect(() => {
+    if (isHovered) return;
+    const interval = setInterval(nextSlide, autoPlayInterval);
+    return () => clearInterval(interval);
+  }, [nextSlide, isHovered]);
 
-      {/* Navigation Buttons */}
-       <button 
-        onClick={prevSlide}
-        className="absolute left-0 top-1/2 -translate-y-1/2 -ml-3 bg-white border border-gray-200 shadow-md w-8 h-8 flex items-center justify-center rounded-full text-gray-600 hover:text-black hover:bg-gray-50 z-10 disabled:opacity-50"
-        aria-label="Previous slide"
-      >
-        &#8249;
-      </button>
-      <button 
-        onClick={nextSlide}
-        className="absolute right-0 top-1/2 -translate-y-1/2 -mr-3 bg-white border border-gray-200 shadow-md w-8 h-8 flex items-center justify-center rounded-full text-gray-600 hover:text-black hover:bg-gray-50 z-10"
-        aria-label="Next slide"
-      >
-        &#8250;
-      </button>
+  return (
+    <div 
+      className="relative mb-8 bg-white border border-gray-100 p-4 shadow-sm"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div className="flex items-center gap-4">
+        
+        {/* Left Arrow */}
+        <button 
+          onClick={prevSlide}
+          className="flex-shrink-0 w-8 h-20 border border-gray-200 flex items-center justify-center hover:bg-gray-50 text-gray-400 hover:text-black transition-colors"
+          aria-label="Previous slide"
+        >
+          <ChevronLeft className="w-5 h-5" />
+        </button>
+
+        {/* Content Window */}
+        <div className="flex-1 overflow-hidden">
+          <div 
+            className="flex transition-transform duration-500 ease-in-out gap-4"
+            style={{ 
+              transform: `translateX(calc(-${currentIndex * (100 / itemsPerPage)}% - ${currentIndex * (16 / itemsPerPage)}px))` // Adjust for gap
+            }}
+          >
+            {articles.map((article) => (
+              <div 
+                key={article.id} 
+                className="w-[calc(33.333%-11px)] flex-shrink-0" // 3 items with gap compensation
+              >
+                 <Link href="#" className="block h-full">
+                   <ArticleCard 
+                      variant="hero-sub"
+                      title={article.title}
+                      imageSrc={article.imageSrc}
+                      className="h-full border-0 shadow-none hover:shadow-none bg-transparent"
+                   />
+                 </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Right Arrow */}
+        <button 
+          onClick={nextSlide}
+          className="flex-shrink-0 w-8 h-20 border border-gray-200 flex items-center justify-center hover:bg-gray-50 text-gray-400 hover:text-black transition-colors"
+          aria-label="Next slide"
+        >
+          <ChevronRight className="w-5 h-5" />
+        </button>
+
+      </div>
     </div>
   );
 };
