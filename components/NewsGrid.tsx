@@ -14,38 +14,68 @@ const NewsGrid = () => {
   return (
     <div className="bg-[#f4f5f5] py-12">
       <div className="container mx-auto px-4 max-w-[1240px]">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         
-        {/* Left Sidebar - The Latest */}
-        <div className="lg:col-span-3 flex flex-col bg-white p-5 border border-gray-100 shadow-sm">
-          <SectionHeader title="The Latest" />
-          <div className="space-y-1">
-             <ArticleCard 
-               variant="sidebar-left" 
-               title="Unconventional Workouts That Torch Fat And Sculpt Muscle" 
-               imageSrc="/images/demo-25-120x86.jpg"
-             />
-             <ArticleCard 
-               variant="sidebar-left" 
-               title="Millions of Indigenous People May Lose Voting Rights: Alliance" 
-               imageSrc="/images/demo-30-120x86.jpg"
-             />
-             <ArticleCard 
-               variant="sidebar-left" 
-               title="Crismonita Dwi Putri, RI's Track Cycling Athlete for Asian Games" 
-               imageSrc="/images/demo-32-120x86.jpg"
-             />
-             <ArticleCard 
-               variant="sidebar-left" 
-               title="President Joko ''Jokowi'' Widodo Refuses to Sign MD3 Law" 
-               imageSrc="/images/demo-33-120x86.jpg"
-             />
-             <ArticleCard 
-               variant="sidebar-left" 
-               title="Garuda operates larger planes for Jakarta-Palembang route" 
-               imageSrc="/images/demo-48-120x86.jpg"
-             />
-          </div>
+        {/* Left Sidebar */}
+        <div className="lg:col-span-3 flex flex-col gap-8">
+            {/* The Latest */}
+            <div className="bg-white p-5 border border-gray-100 shadow-sm">
+              <SectionHeader title="The Latest" />
+              <div className="space-y-1">
+                 <ArticleCard 
+                   variant="sidebar-left" 
+                   title="Unconventional Workouts That Torch Fat And Sculpt Muscle" 
+                   imageSrc="/images/demo-25-120x86.jpg"
+                 />
+                 <ArticleCard 
+                   variant="sidebar-left" 
+                   title="Millions of Indigenous People May Lose Voting Rights: Alliance" 
+                   imageSrc="/images/demo-30-120x86.jpg"
+                 />
+                 <ArticleCard 
+                   variant="sidebar-left" 
+                   title="Crismonita Dwi Putri, RI's Track Cycling Athlete for Asian Games" 
+                   imageSrc="/images/demo-32-120x86.jpg"
+                 />
+                 <ArticleCard 
+                   variant="sidebar-left" 
+                   title="President Joko ''Jokowi'' Widodo Refuses to Sign MD3 Law" 
+                   imageSrc="/images/demo-33-120x86.jpg"
+                 />
+                 <ArticleCard 
+                   variant="sidebar-left" 
+                   title="Garuda operates larger planes for Jakarta-Palembang route" 
+                   imageSrc="/images/demo-48-120x86.jpg"
+                 />
+              </div>
+            </div>
+
+            {/* Opinion List (Moved here) */}
+             <div className="bg-white p-5 border border-gray-100 shadow-sm">
+                 <SectionHeader title="Opinion" />
+                 <div className="mt-4">
+                     <ArticleCard 
+                        variant="opinion"
+                        title="Tour showcases shared art history of Indonesia and Singapore"
+                     />
+                     <ArticleCard 
+                        variant="opinion"
+                        title="Finland Has An Education System The Other Country Should Learn From"
+                     />
+                     <ArticleCard 
+                        variant="opinion"
+                        title="Women in Politics: Urgency of Quota System For Women In Regional Elections"
+                     />
+                     <ArticleCard 
+                        variant="opinion"
+                        title="China's Peng banned and fined for Wimbledon corruption attempt"
+                     />
+                     <ArticleCard 
+                        variant="opinion"
+                        title="Democratic Party politician calls Prabowo 'cardboard general'"
+                     />
+                 </div>
+             </div>
         </div>
 
         {/* Center Content */}
@@ -87,7 +117,7 @@ const NewsGrid = () => {
         </div>
 
         {/* Right Sidebar */}
-        <div className="lg:col-span-3 space-y-10">
+        <div className="lg:col-span-3 space-y-10 pl-2">
              <div className="relative w-full aspect-[300/250] mb-8 flex items-center justify-center">
                 <img src="/images/banner-ad-345x345.jpg" alt="Ad" className="max-w-full h-auto object-contain" />
              </div>
@@ -102,32 +132,6 @@ const NewsGrid = () => {
                              Democratic Party politician calls Prabowo ‘cardboard general’
                          </h3>
                     </div>
-                 </div>
-             </section>
-
-             <section>
-                 <SectionHeader title="Opinion" />
-                 <div className="mt-4">
-                     <ArticleCard 
-                        variant="opinion"
-                        title="Tour showcases shared art history of Indonesia and Singapore"
-                     />
-                     <ArticleCard 
-                        variant="opinion"
-                        title="Finland Has An Education System The Other Country Should Learn From"
-                     />
-                     <ArticleCard 
-                        variant="opinion"
-                        title="Women in Politics: Urgency of Quota System For Women In Regional Elections"
-                     />
-                     <ArticleCard 
-                        variant="opinion"
-                        title="China's Peng banned and fined for Wimbledon corruption attempt"
-                     />
-                     <ArticleCard 
-                        variant="opinion"
-                        title="Democratic Party politician calls Prabowo 'cardboard general'"
-                     />
                  </div>
              </section>
         </div>
