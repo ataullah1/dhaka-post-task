@@ -97,20 +97,17 @@ const NewsGrid = () => {
            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8 mt-12 pt-8 border-t border-gray-200">
                 <ArticleCard 
                   variant="sidebar-right" 
-                  title="Democratic Party politician calls Prabowo 'cardboard general'"
-                  author="John Doe"
-                  date="August 10, 2018"
-                  excerpt="Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life..."
+                  category="Business"
+                  title="Grab tackles Jakarta's odd-even license plate policy with special algorithm"
+                  date="February 17, 2020"
                   imageSrc="/images/demo-2-350x250.jpg"
                 />
                  <ArticleCard 
                   variant="sidebar-right"
-                  category="Lifestyle"
-                  title="Google tracks location data even when users turn service off"
-                  author="John Doe"
-                  date="August 14, 2018"
-                  excerpt="Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life..."
-                  imageSrc="/images/demo-24-350x250.jpg"
+                  category="Politics"
+                  title="Jokowi supporters try to prevent anti-Jokowi activist from entering Batam"
+                  date="August 10, 2018"
+                  imageSrc="/images/demo-12-350x250.jpg"
                 />
            </div>
 

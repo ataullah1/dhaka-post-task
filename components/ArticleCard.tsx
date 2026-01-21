@@ -52,11 +52,12 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
 
   if (variant === 'sidebar-right') {
      return (
-       <div className={`mb-8 group cursor-pointer ${className}`}>
-         <div className="relative w-full aspect-[3/2] mb-4 overflow-hidden bg-gray-100">
+       <div className={`group cursor-pointer bg-white border border-gray-100 shadow-sm h-full ${className}`}>
+         <div className="relative w-full aspect-[3/2] overflow-hidden bg-gray-100">
              {category && (
-                 <span className={`absolute top-0 left-0 z-10 text-white text-[10px] font-bold px-2 py-1 uppercase tracking-wider ${
-                     category.toLowerCase() === 'lifestyle' ? 'bg-[#ff005a]' : 'bg-[#F9B200]' 
+                 <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 z-10 text-white text-[10px] font-bold px-2 py-1 uppercase tracking-wider ${
+                     category.toLowerCase() === 'politics' ? 'bg-[#ff005a]' : 
+                     category.toLowerCase() === 'business' ? 'bg-[#0078FF]' : 'bg-[#F9B200]'
                  }`}>
                      {category}
                  </span>
@@ -71,33 +72,25 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
              />
            )}
          </div>
-         <h3 className="text-lg font-bold leading-snug mb-2 group-hover:text-red-700 transition-colors font-condensed">
-             {title}
-         </h3>
-         <div className="text-[11px] text-gray-500 flex items-center gap-1 uppercase font-semibold tracking-wide">
-             {author && <span className="text-black">by {author}</span>}
-             {date && (
-                 <>
-                  {author && <span>-</span>}
-                  <span>{date}</span>
-                 </>
-             )}
+         <div className="p-5 text-center">
+             <h3 className="text-[17px] font-bold leading-snug mb-3 group-hover:text-red-700 transition-colors font-condensed text-gray-900">
+                 {title}
+             </h3>
+             <div className="text-[11px] text-gray-400 flex items-center justify-center gap-2 mb-3">
+                 <span className="relative top-[1px]">🕒</span>
+                 <span>{date}</span>
+             </div>
          </div>
-         {excerpt && (
-             <p className="mt-3 text-gray-600 text-[13px] leading-relaxed line-clamp-3 font-sans">
-                 {excerpt}
-             </p>
-         )}
        </div>
      )
   }
 
   if (variant === 'opinion') {
       return (
-          <div className={`mb-4 pb-4 border-b border-gray-200 border-dashed last:border-0 last:pb-0 group cursor-pointer ${className}`}>
-             <div className="flex gap-3 items-start">
-                  <span className="text-gray-300 text-[10px] mt-1.5 transform rotate-0">▶</span>
-                  <h3 className="text-[13px] font-bold leading-snug text-gray-800 group-hover:text-red-700 transition-colors font-condensed">
+          <div className={`mb-3 pb-3 border-b border-dashed border-gray-200 last:border-0 last:pb-0 group cursor-pointer ${className}`}>
+             <div className="flex gap-2.5 items-start">
+                  <span className="text-black text-[10px] mt-[5px]">▶</span>
+                  <h3 className="text-[13px] font-bold leading-5 text-gray-700 group-hover:text-red-700 transition-colors font-condensed">
                     {title}
                   </h3>
              </div>
