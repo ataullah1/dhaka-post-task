@@ -22,7 +22,7 @@ const NewsGrid = () => {
             {/* The Latest */}
             <div className="bg-white p-5 border border-gray-100 shadow-sm">
               <SectionHeader title="The Latest" />
-              <div className="space-y-1">
+              <div className="flex flex-col gap-6">
                  <ArticleCard 
                    variant="sidebar-left" 
                    title="Unconventional Workouts That Torch Fat And Sculpt Muscle" 

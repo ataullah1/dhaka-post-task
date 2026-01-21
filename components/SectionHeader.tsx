@@ -6,11 +6,11 @@ interface SectionHeaderProps {
 
 const SectionHeader: React.FC<SectionHeaderProps> = ({ title }) => {
   return (
-    <div className="mb-6">
-      <h2 className="text-base font-bold border-b-[3px] border-black pb-2 inline-block font-condensed tracking-wide">
+    <div className="mb-5 relative">
+      <h2 className="text-[20px] font-bold border-b-2 border-black pb-1 inline-block font-condensed tracking-wide z-10 relative">
         {title}
       </h2>
-      <div className="border-b border-gray-200 -mt-[2px] w-full"></div>
+      <div className="absolute bottom-0 left-0 w-full border-b border-gray-200"></div>
     </div>
   );
 };
