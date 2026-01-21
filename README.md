@@ -4,7 +4,7 @@ A pixel-perfect, fully responsive implementation of a news section layout based 
 
 🔗 **Live Demo:** [https://dhaka-post-task.vercel.app/](https://dhaka-post-task.vercel.app/)
 
-![Project Preview](/public/screenshot.png) *(Note: Add a screenshot of your finished project here if available)*
+![Project Preview](/public/Screenshot_1.png)
 
 ## 🚀 features
 

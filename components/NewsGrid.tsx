@@ -85,12 +85,13 @@ const NewsGrid = () => {
 
         {/* Right Sidebar */}
         <div className="lg:col-span-3 space-y-7">
-             <div className="relative w-full aspect-[300/250] mb-7 flex items-center justify-center">
+             <div className="mb-7 flex items-center justify-center bg-gray-50 border border-gray-100">
                 <Image 
                   src="/images/banner-ad-345x345.jpg" 
                   alt="Ad" 
-                  fill
-                  className="object-contain" 
+                  width={345}
+                  height={345}
+                  className="w-full h-auto"
                   sizes="(max-width: 768px) 100vw, 300px"
                 />
              </div>
