@@ -54,7 +54,7 @@ const Header = () => {
               
               {/* Mobile Menu */}
               <button 
-                className="md:hidden p-2 -ml-2 hover:bg-gray-100 rounded-full transition-colors"
+                className="p-2 -ml-2 hover:bg-gray-100 rounded-full transition-colors"
                 onClick={() => setIsSidebarOpen(true)}
               >
                 <Menu className="w-7 h-7 text-black" />
