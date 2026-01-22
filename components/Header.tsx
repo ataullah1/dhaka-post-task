@@ -30,8 +30,8 @@ const Header = () => {
   return (
     <>
       <header className="bg-white z-[40] font-condensed">
-        {/* Logo */}
-        <div className="container mx-auto px-4 py-8 text-center">
+        {/* Desktop Logo (Hidden on Mobile) */}
+        <div className="hidden md:block container mx-auto px-4 py-8 text-center">
           <div className="flex justify-center">
             <Link href="/">
                <div className="relative w-48 h-8">
@@ -47,21 +47,34 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Navigation */}
-        <div className="border-t border-gray-900">
+        {/* Navigation Bar */}
+        <div className="md:border-t border-gray-900 bg-white">
           <div className="container mx-auto px-4">
-            <div className="flex items-center justify-between h-12">
+            <div className="flex items-center justify-between h-16 md:h-12">
               
-              {/* Mobile Menu Button */}
+              {/* Mobile Menu */}
               <button 
-                className="p-2 -ml-2 hover:bg-gray-100 rounded-full transition-colors"
+                className="md:hidden p-2 -ml-2 hover:bg-gray-100 rounded-full transition-colors"
                 onClick={() => setIsSidebarOpen(true)}
               >
-                <Menu className="w-6 h-6 text-black" />
+                <Menu className="w-7 h-7 text-black" />
               </button>
 
+              {/* Mobile Logo */}
+              <div className="md:hidden relative w-32 h-8">
+                 <Link href="/">
+                    <Image 
+                      src="/logo_mobile.png" 
+                      alt="The Downtown" 
+                      fill
+                      className="object-contain"
+                      priority
+                    />
+                 </Link>
+              </div>
+
               {/* Desktop Menu */}
-              <nav className="hidden md:block h-full">
+              <nav className="hidden md:block h-full mx-auto">
                 <ul className="flex justify-center gap-6 text-black h-full items-center font-bold uppercase text-base tracking-wide">
                   {navItems.map((item) => (
                     <li 
@@ -111,7 +124,7 @@ const Header = () => {
 
               {/* Right: Search Icon */}
               <button className="p-2 -mr-2 hover:bg-gray-100 rounded-full transition-colors">
-                <Search className="w-5 h-5 text-black" />
+                <Search className="w-6 h-6 text-black" />
               </button>
 
             </div>
