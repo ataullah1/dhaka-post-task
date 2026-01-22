@@ -26,7 +26,7 @@ const ArticleCardHeroSub: React.FC<ArticleCardHeroSubProps> = ({
         )}
       </div>
       <div className="flex-1 min-w-0">
-        <h3 className="text-[11px] font-bold leading-[1.35] group-hover:text-red-700 transition-colors line-clamp-5 font-condensed text-gray-900 mt-[-2px]">
+        <h3 className="text-[14px] md:text-[11px] font-medium md:font-bold leading-[1.35] group-hover:text-red-700 transition-colors line-clamp-5 font-condensed text-gray-900 mt-[-2px]">
           {title}
         </h3>
       </div>

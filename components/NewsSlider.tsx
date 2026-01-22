@@ -18,9 +18,27 @@ interface NewsSliderProps {
 const NewsSlider: React.FC<NewsSliderProps> = ({ articles }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+  const [itemsPerPage, setItemsPerPage] = useState(3);
 
-  // Configuration
-  const itemsPerPage = 3;
+  // Responsive itemsPerPage
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setItemsPerPage(1);
+      } else if (window.innerWidth < 1024) {
+        setItemsPerPage(2);
+      } else {
+        setItemsPerPage(3);
+      }
+    };
+
+    // Initial check
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const autoPlayInterval = 5000;
   
   const nextSlide = useCallback(() => {
@@ -64,13 +82,14 @@ const NewsSlider: React.FC<NewsSliderProps> = ({ articles }) => {
           <div 
             className="flex transition-transform duration-500 ease-in-out gap-4"
             style={{ 
-              transform: `translateX(calc(-${currentIndex * (100 / itemsPerPage)}% - ${currentIndex * (16 / itemsPerPage)}px))` // Adjust for gap
+              transform: `translateX(calc(-${currentIndex * (100 / itemsPerPage)}% - ${currentIndex * (16 / itemsPerPage)}px))` 
             }}
           >
             {articles.map((article) => (
               <div 
                 key={article.id} 
-                className="w-[calc(33.333%-11px)] flex-shrink-0" // 3 items with gap compensation
+                className="flex-shrink-0"
+                style={{ width: `calc(${100 / itemsPerPage}% - ${16 * (itemsPerPage - 1) / itemsPerPage}px)` }}
               >
                  <Link href="#" className="block h-full">
                    <ArticleCardHeroSub

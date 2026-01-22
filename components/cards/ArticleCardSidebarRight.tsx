@@ -44,7 +44,7 @@ const ArticleCardSidebarRight: React.FC<ArticleCardSidebarRightProps> = ({
         )}
       </div>
       <div className="p-5">
-        <h2 className="text-[20px] font-condensed font-bold leading-tight mb-3 group-hover:text-red-700 transition-colors text-gray-900">
+        <h2 className="text-base sm:text-[20px] font-condensed font-bold leading-tight mb-3 group-hover:text-red-700 transition-colors text-gray-900">
           {title}
         </h2>
         <div className="text-[11px] text-gray-400 flex items-center gap-2 mb-4 font-sans">
