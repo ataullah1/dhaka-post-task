@@ -4,7 +4,7 @@ A pixel-perfect, fully responsive implementation of a news section layout based 
 
 🔗 **Live Demo:** [https://dhaka-post-task.vercel.app/](https://dhaka-post-task.vercel.app/)
 
-![Project Preview](/public/Screenshot_1.png)
+![Project Preview](/public/screencapture-dhaka-post.png)
 
 ## 🚀 features
 
@@ -35,8 +35,11 @@ A pixel-perfect, fully responsive implementation of a news section layout based 
 
 ```
 ├── components/          # Reusable UI components
+│   ├── cards/           # Specialized card components
+│   │   ├── ArticleCardHero.tsx
+│   │   ├── ArticleCardSidebar.tsx
+│   │   └── ...
 │   ├── NewsGrid.tsx     # Main layout container
-│   ├── ArticleCard.tsx  # Versatile card component with multiple variants
 │   ├── NewsSlider.tsx   # Interactive news carousel
 │   ├── Header.tsx       # Dynamic header navigation
 │   └── ...
@@ -56,18 +59,16 @@ A pixel-perfect, fully responsive implementation of a news section layout based 
 
 2. **Install dependencies**
    ```bash
-   npm install
-   # or
    pnpm install
    # or
-   yarn install
+   npm install
    ```
 
 3. **Run the development server**
    ```bash
-   npm run dev
-   # or
    pnpm run dev
+   # or
+   npm run dev
    ```
 
 4. **Open in browser**
@@ -75,11 +76,11 @@ A pixel-perfect, fully responsive implementation of a news section layout based 
 
 ## 🎨 Design Implementation Details
 
-- **Typography**: Uses 'Roboto Condensed' for headings and 'Geist' for body text to match the journalistic aesthetic.
-- **Components**:
-  - `ArticleCard`: Handles 5 different visual variants (`hero`, `sidebar-left`, `sidebar-right`, `opinion`, `hero-sub`) via a single robust interface.
-  - `NewsGrid`: Implements the complex nested grid structure using Tailwind's `grid-cols-12` system.
-- **Responsiveness**: Custom breakpoints ensure smooth transitions from 3-column (desktop) to 2-column (tablet) to 1-column (mobile) layouts.
+- **Typography**: Uses 'Roboto Condensed' for headings and standard sans-serif for body text to match the journalistic aesthetic.
+- **Component Architecture**: 
+  - **Modular Cards**: different card variants (Hero, Sidebar, Opinion) are split into dedicated components in `components/cards/` for better maintainability and readability.
+  - **Grid Layout**: Implements a complex nested grid structure using Tailwind's `grid-cols-12` system, fully responsive across all breakpoints.
+- **Responsiveness**: Custom breakpoints ensure smooth transitions from 3-column (desktop) to 2-column (tablet) to 1-column (mobile) layouts. Mobile layout includes specific optimizations like changing the order of elements for better UX.
 
 ## 📝 License
 
