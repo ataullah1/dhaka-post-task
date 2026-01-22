@@ -44,7 +44,7 @@ const NewsSlider: React.FC<NewsSliderProps> = ({ articles }) => {
 
   return (
     <div 
-      className="relative mb-8 bg-white border border-gray-100 p-4 shadow-sm"
+      className="relative mb-7 bg-white border border-gray-100 p-4 shadow-sm"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

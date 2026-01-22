@@ -3,10 +3,10 @@ import Image from 'next/image';
 import SectionHeader from './SectionHeader';
 import ArticleCardSidebarLeft from './cards/ArticleCardSidebarLeft';
 import ArticleCardHero from './cards/ArticleCardHero';
+import ArticleCardBottomGrid from './cards/ArticleCardBottomGrid';
 import ArticleCardSidebarRight from './cards/ArticleCardSidebarRight';
 import ArticleCardOpinion from './cards/ArticleCardOpinion';
 import NewsSlider from './NewsSlider';
-import { Clock } from 'lucide-react';
 
 import { 
   sliderArticles, 
@@ -70,7 +70,7 @@ const NewsGrid = () => {
            
            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-7 gap-y-7 pt-7">
                 {subHeroArticles.map((article) => (
-                  <ArticleCardSidebarRight
+                  <ArticleCardBottomGrid
                     key={article.id}
                     category={article.category}
                     title={article.title}
@@ -96,39 +96,15 @@ const NewsGrid = () => {
              </div>
 
              {rightSidebarArticles.map((article) => (
-               <div key={article.id} className="bg-white border border-gray-100 shadow-sm group cursor-pointer">
-                 <div className="relative w-full aspect-[3/2] overflow-hidden bg-gray-100">
-                    <span className={`absolute top-4 left-0 z-10 text-white text-[10px] font-bold px-2 py-1 uppercase tracking-wider ${
-                      article.category === 'Opinion' ? 'bg-[#F9B200]' : 'bg-[#ff005a]'
-                    }`}>
-                        {article.category}
-                    </span>
-                    {article.imageSrc && (
-                      <Image 
-                        src={article.imageSrc} 
-                        alt={`${article.category} Cover`} 
-                        fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-500" 
-                        sizes="(max-width: 768px) 100vw, 350px"
-                      />
-                    )}
-                 </div>
-                 <div className="p-6">
-                    <h2 className="text-[20px] font-condensed font-bold leading-tight mb-3 group-hover:text-red-700 transition-colors text-gray-900">
-                        {article.title}
-                    </h2>
-                    <div className="text-[11px] text-gray-400 flex items-center gap-2 mb-4 font-sans font-semibold">
-                        <span className="text-black uppercase">by {article.author}</span>
-                        <div className="flex items-center gap-1">
-                            <Clock className="w-3 h-3" />
-                            <span>{article.date}</span>
-                        </div>
-                    </div>
-                    <p className="text-gray-500 text-[13px] leading-relaxed font-sans line-clamp-3">
-                        {article.excerpt}
-                    </p>
-                </div>
-             </div>
+               <ArticleCardSidebarRight
+                 key={article.id}
+                 category={article.category}
+                 title={article.title}
+                 author={article.author}
+                 date={article.date}
+                 excerpt={article.excerpt}
+                 imageSrc={article.imageSrc}
+               />
              ))}
         </div>
 

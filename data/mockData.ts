@@ -77,6 +77,7 @@ export const rightSidebarArticles: Article[] = [
       title: "Google tracks location data even when users turn service off",
       author: "John Doe",
       date: "August 14, 2018",
+      excerpt: "Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life...",
       imageSrc: "/images/demo-49-350x250.jpg"
   }
 ];

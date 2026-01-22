@@ -36,16 +36,16 @@ const ArticleCardHero: React.FC<ArticleCardHeroProps> = ({
           />
         )}
       </div>
-      <div className="relative -mt-20 mx-3 md:mx-5 bg-white p-7 z-10 text-center md:text-left transition-transform duration-300 hover:-translate-y-1">
+      <div className="relative -mt-16 mx-3 md:mx-5 bg-white px-7 pt-5 pb-9 z-10 text-center md:text-left transition-transform duration-300 hover:-translate-y-1">
         {category && (
-          <span className="text-[11px] font-bold text-gray-400 uppercase tracking-[0.15em] mb-2 block">
+          <span className="text-[10px] font-semibold text-gray-400 uppercase tracking-[0.15em] mb-2 block">
             {category}
           </span>
         )}
-        <h2 className="text-3xl font-condensed font-bold leading-[1.1] mb-3 group-hover:text-red-700 transition-colors text-gray-900">
+        <h2 className="text-[28px] font-condensed font-bold leading-[1.3] mb-3 group-hover:text-red-700 transition-colors text-gray-900">
           {title}
         </h2>
-        <div className="text-[13px] text-gray-500 flex items-center gap-5 mb-3 font-sans italic">
+        <div className="text-[12px] text-gray-500 flex items-center gap-5 mb-3 font-sans italic">
           <div>
             <span className="mr-1 text-gray-400">by</span>
             {author && <span className="text-black font-bold uppercase not-italic">{author}</span>}
@@ -66,12 +66,12 @@ const ArticleCardHero: React.FC<ArticleCardHeroProps> = ({
           )}
         </div>
         {excerpt && (
-          <p className="text-gray-500 text-[17px] leading-8 font-serif mb-6 line-clamp-2">
+          <p className="text-gray-500 text-[14px] leading-6 font-serif mb-4 line-clamp-2">
             {excerpt}
           </p>
         )}
         <div>
-          <button className="border border-gray-300 text-[11px] font-bold px-8 py-3 uppercase tracking-widest hover:bg-black hover:text-white hover:border-black transition-all duration-300">
+          <button className="border border-gray-300 text-[11px] text-gray-500 px-4 py-1.5 uppercase tracking-widest hover:bg-black hover:text-white hover:border-black transition-all duration-300 shadow">
             Read More
           </button>
         </div>
