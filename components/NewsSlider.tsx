@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useCallback } from 'react';
-import ArticleCard from './ArticleCard';
+import ArticleCardHeroSub from './cards/ArticleCardHeroSub';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 
@@ -73,8 +73,7 @@ const NewsSlider: React.FC<NewsSliderProps> = ({ articles }) => {
                 className="w-[calc(33.333%-11px)] flex-shrink-0" // 3 items with gap compensation
               >
                  <Link href="#" className="block h-full">
-                   <ArticleCard 
-                      variant="hero-sub"
+                   <ArticleCardHeroSub
                       title={article.title}
                       imageSrc={article.imageSrc}
                       className="h-full border-0 shadow-none hover:shadow-none bg-transparent"

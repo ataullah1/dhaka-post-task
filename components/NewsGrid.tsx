@@ -1,7 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
 import SectionHeader from './SectionHeader';
-import ArticleCard from './ArticleCard';
+import ArticleCardSidebarLeft from './cards/ArticleCardSidebarLeft';
+import ArticleCardHero from './cards/ArticleCardHero';
+import ArticleCardSidebarRight from './cards/ArticleCardSidebarRight';
+import ArticleCardOpinion from './cards/ArticleCardOpinion';
 import NewsSlider from './NewsSlider';
 import { Clock } from 'lucide-react';
 
@@ -28,9 +31,8 @@ const NewsGrid = () => {
               <SectionHeader title="The Latest" />
               <div className="flex flex-col gap-6">
                  {latestArticles.map((article) => (
-                   <ArticleCard 
+                   <ArticleCardSidebarLeft
                      key={article.id}
-                     variant="sidebar-left" 
                      title={article.title}
                      imageSrc={article.imageSrc}
                    />
@@ -42,9 +44,8 @@ const NewsGrid = () => {
                  <SectionHeader title="Opinion" />
                  <div className="mt-4">
                      {opinionListArticles.map((article) => (
-                       <ArticleCard 
+                       <ArticleCardOpinion
                           key={article.id}
-                          variant="opinion"
                           title={article.title}
                        />
                      ))}
@@ -57,8 +58,7 @@ const NewsGrid = () => {
            
            <NewsSlider articles={sliderArticles} />
 
-           <ArticleCard 
-              variant="hero"
+           <ArticleCardHero
               category={heroArticle.category}
               title={heroArticle.title}
               author={heroArticle.author}
@@ -70,9 +70,8 @@ const NewsGrid = () => {
            
            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-7 gap-y-7 pt-7">
                 {subHeroArticles.map((article) => (
-                  <ArticleCard 
+                  <ArticleCardSidebarRight
                     key={article.id}
-                    variant="sidebar-right" 
                     category={article.category}
                     title={article.title}
                     date={article.date}
