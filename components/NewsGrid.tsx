@@ -25,7 +25,7 @@ const NewsGrid = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-7 items-start">
         
         {/* Left Sidebar */}
-        <div className="lg:col-span-3 flex flex-col gap-7">
+        <div className="lg:col-span-3 flex flex-col gap-7 order-2 lg:order-1">
             
             <div className="bg-white p-5 border border-gray-100 shadow-sm">
               <SectionHeader title="The Latest" />
@@ -54,7 +54,7 @@ const NewsGrid = () => {
         </div>
 
         {/* Main Content */}
-        <div className="lg:col-span-6">
+        <div className="lg:col-span-6 order-1 lg:order-2">
            
            <NewsSlider articles={sliderArticles} />
 
@@ -83,7 +83,7 @@ const NewsGrid = () => {
         </div>
 
         {/* Right Sidebar */}
-        <div className="lg:col-span-3 space-y-7">
+        <div className="lg:col-span-3 space-y-7 order-3 lg:order-3">
              <div className="mb-7 flex items-center justify-center bg-gray-50 border border-gray-100">
                 <Image 
                   src="/images/banner-ad-345x345.jpg" 
